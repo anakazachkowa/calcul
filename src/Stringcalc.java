@@ -39,23 +39,24 @@ public class Stringcalc{
            String rez = a[0] + a[1];
            if (rez.length() > 40) {
            String r = rez.substring(0, 40);
-           System.out.println("\""+r + "..."+"\"");
+           printPoint(r);
            }else {
-               System.out.println("\""+rez+"\"");
+               printText(rez);
            }
        }else if (z == '*'){
            int y = Integer.parseInt(a[1]);
            String rez = "";
            for (int i = 0; i < y; i++) {
+     
                rez += a[0];
                if (y >10) throw new Exception("Чосло должно быть от 1 до 10");
 
                }
            if (rez.length() >40){
                String r = rez.substring(0,40);
-               System.out.println("\""+r+"..."+"\"");
+               printPoint(r);
            }else {
-               System.out.println("\""+rez+"\"");
+               printText(rez);
            }
 
 
@@ -67,7 +68,7 @@ public class Stringcalc{
            }else{
                String rez = a[0].substring(0,id);
                rez+=a[0].substring(id+a[1].length());
-               System.out.println("\""+rez+"\"");
+               printText(rez);
            }
 
 
@@ -75,7 +76,7 @@ public class Stringcalc{
            int w = Integer.parseInt(a[1]);
             int n = a[0].length() / w;
             String rez = a[0].substring(0, n);
-            System.out.println("\"" + rez + "\"");
+            printText (rez);
             if (w >10) throw new Exception("Число должно быть от 1 до 10");
 
 
@@ -84,6 +85,12 @@ public class Stringcalc{
 
        }
 
+       }
+       static void printText (String text){
+        System.out.println("\""+text+"\"");
+       }
+       static void printPoint (String point){
+        System.out.println("\""+point+"..."+"\"");
        }
 }
 
